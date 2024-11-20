@@ -1,0 +1,7 @@
+train: data/obj/train
+val: data/obj/val
+test: data/obj/test
+
+nc: 10
+names: ['Person', 'Car', 'Dog', 'Cat', 'Bicycle',
+        'Bus', 'Truck', 'Weapon', 'Fish', 'Airplane']
