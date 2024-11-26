@@ -2,3 +2,7 @@
 openimages/
 yolo_labels/
 data/
+runs/
+*.zip
+*.pt
+

@@ -5,22 +5,29 @@ import torch
 def train_model():
     num = 0
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    modelDir = 'yolov8n.pt'
+    modelDir = './runs/detect/train4/weights/best.pt'
     model = YOLO(modelDir)
+    imageSize = 640
 
     print('---------------- Training ----------------')
     train_results = model.train(data='data.yaml',
-                                epochs=100,
-                                imgsz=640,
-                                batch=7,
-                                device=device)
+                                epochs=50,
+                                imgsz=imageSize,
+                                # batch=,
+                                device=device,
+                                val=True,)
 
     print('---------------- validating ----------------')
-    # evaluate performance on the validation set
-    metrics = model.val()
+    # evaluate performance on the test set
+    metrics = model.val(data='data.yaml',
+                        split='test',
+                        save_json=True,)
 
-    predict = model.predict(source='./data/obj/train')
-    file = open()
+    # run prediction on the test dataset
+    predict = model.predict(source='./data/obj/test')
+    file = open('./runs/detect/train5/predictStuff.csv', 'w')
+    file.write(f'{predict}')
+    file.close()
 
         # print('---------------- showing ----------------')
         # # perform obj detection on image
