@@ -9,7 +9,7 @@ def getData_fun():
     classes = ['Person', 'Car', 'Dog', 'Cat', 'Bicycle', 'Bus', 'Truck', 'Weapon', 'Fish', 'Airplane']
     dest_dir = './openimages/train'
     csv_dir = './openimages/csv'
-    annotation_format = 'pascal'
+    annotation_format = 'darknet'
     labels_dir = './yolo_labels'
     final_dir = './data/obj'
 

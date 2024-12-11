@@ -4,5 +4,6 @@ yolo_labels/
 data/
 runs/
 *.zip
-*.pt
+yolov8n.pt
+yolo11n.pt
 
