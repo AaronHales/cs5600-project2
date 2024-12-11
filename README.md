@@ -39,3 +39,4 @@ getting the needed data from the csv files, then about 30-60 minutes of getting 
 now you are ready to train the model
 
 ## training
+I have created a file named: `runYOLO.py` which I used to train my model. Refer to the documentation for YOLO for how to train the model, but I had it validate using the val split while it was training and then predict with the test split, but you can change that.
