@@ -14,7 +14,8 @@ def getData_fun():
     final_dir = './data/obj'
 
     downloadFiles(classes=classes, dest_dir=dest_dir, csv_dir=csv_dir, annotation_format=annotation_format)
-    getInfofromCSVFile(classes=classes, csv_dir=csv_dir, images_dir=dest_dir, labels_dir=labels_dir)
+    if annotation_format != 'darknet':
+        getInfofromCSVFile(classes=classes, csv_dir=csv_dir, images_dir=dest_dir, labels_dir=labels_dir)
     imageFileExists(image_file_path=dest_dir, text_file_path=f'{labels_dir}/train', classes_list=classes)
     imageFileExists(image_file_path=dest_dir, text_file_path=f'{labels_dir}/val', classes_list=classes)
     imageFileExists(image_file_path=dest_dir, text_file_path=f'{labels_dir}/test', classes_list=classes)
